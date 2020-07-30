@@ -102,8 +102,7 @@ table {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   position: fixed;
-  height: 70px;
-  /* background-color: red; */
+  /* height: 70px; */
   display: flex;
   width: 100%;
   border: none;
@@ -121,14 +120,16 @@ nav ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 960px;
+  max-width: 1140px;
+  margin-left: 16px;
+  margin-right: 16px;
 }
 
 .desktop-nav {
+  position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 500px;
+  justify-content: center;
 }
 
 .nav-links-container {
@@ -143,11 +144,17 @@ nav ul {
   flex-direction: row;
   justify-content: space-around;
   font-size: 0.95rem;
-  
-  /* border: 1px red solid; */
+}
 
-  /* font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
-
+.nav-links-dropdown {
+  /* width: 200px; */
+  right: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 0.95rem;
+  height: 500px;
 }
 
 li.nav-link {
@@ -184,13 +191,14 @@ li.nav-link {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-position: center center;
 }
 
 .bg-yellow{
   background-color: #fed136
 }
 
-.landing-inner > h1, h2, button{
+.landing-inner > h1, .landing-inner > h2, .landing-inner > button{
   margin-bottom: 30px;
   /* padding-bottom: 30px; */
   /* height: 300px; */
@@ -235,3 +243,52 @@ button {
   outline:none;
   border: 1px transparent;
 }
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.hamburger-holder {
+  min-width: 79px;
+  height: 36px;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  border-radius: 3px;
+  
+}
+
+.hamburger{
+  width: 12px;
+  height: 2px;
+  background-color: white;
+  margin: 2px 0;
+}
+
+.hide{
+  display: none !important
+}
+
+@media (min-width: 990px){
+  .display-desktop {display: initial;}
+  .display-mobile  {display: none;}
+}
+
+/* -- mobile display -- */
+@media (max-width: 989.98px){
+  .display-desktop {display: none;}
+  .display-mobile  {display: initial;}
+  .nav-container {
+    background-color: #212529;
+  }
+  .logo-img {
+    height: 1.5rem;
+    transition: height 0.3s ease-in-out;
+  }
+  .nav-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
